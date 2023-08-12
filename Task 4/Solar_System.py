@@ -1,5 +1,3 @@
-# solar_system_3d.py
-
 import itertools
 import math
 import matplotlib.pyplot as plt

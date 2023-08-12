@@ -1,5 +1,3 @@
-# simple_solar_system.py
-
 from Solar_System import SolarSystem, Sun, Planet
 
 solar_system = SolarSystem(400, projection_2d=False)

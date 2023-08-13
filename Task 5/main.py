@@ -1,16 +1,14 @@
 import math
 import numpy as np
 
-Yr=365*24*60*60
-P_Pluto_Yr=248.348
-P_Pluto_Sec=248.348*Yr
+P_Pluto=248.348
 e_Pluto=0.25
 theta_i=0
 theta_f=2*math.pi
 t_i=0
 t_f=P_Pluto_Yr
 N=1000
-Pluto_t_constant=theta_constant(P_Pluto_Yr,e_Pluto)
+Pluto_t_constant=theta_constant(P_Pluto,e_Pluto)
 theta_values = np.linspace(theta_i, theta_f, N)
 time_values = np.linespace(t_i,t_f,N)
 integrand_values = integrand(theta_values)

@@ -7,8 +7,14 @@ P_Pluto_Sec=248.348*Yr
 e_Pluto=0.25
 theta_i=0
 theta_f=2*math.pi
+t_i=0
+t_f=P_Pluto_Yr
+N=1000
 Pluto_t_constant=theta_constant(P_Pluto_Yr,e_Pluto)
-#h=1/1000
+theta_values = np.linspace(theta_i, theta_f, N)
+time_values = np.linespace(t_i,t_f,N)
+integrand_values = integrand(theta_values)
+cumulative_sum_values = simpson(integrand, theta_i, theta_f, N)
 
 def time_constant(P,e):
     time_constant=(P*(1-e**2)**1.5)/(2*math.pi)

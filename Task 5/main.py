@@ -49,8 +49,8 @@ time_values = np.linspace(t_i, t_f, N)
 # Compute the integrand values using the theta_2_time_integrand function
 integrand_values = theta_2_time_integrand(e_Pluto, theta_values)
 
-# Compute the cumulative sum values using the simpson function
-cumulative_sum_values = simpson(theta_2_time_integrand, theta_i, theta_f, N)
+# Compute the cumulative sum values using the simpson function with integrand_values
+cumulative_sum_values = simpson(integrand_values, theta_i, theta_f, N)
 
 # Optional: If you want to convert the cumulative_sum_values to time units using the Pluto_time_constant
 cumulative_sum_time_values = cumulative_sum_values * Pluto_time_constant

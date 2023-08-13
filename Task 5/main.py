@@ -1,4 +1,3 @@
-import math
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -16,7 +15,7 @@ def time_constant(P, e):
     return time_constant
 
 def theta_2_time_integrand(e, theta):
-    time_integrand = (1 - e * math.cos(theta)) ** (-2)
+    time_integrand = (1 - e * np.cos()(theta)) ** (-2)
     return time_integrand
 
 def simpson(integrand, a, b, n):

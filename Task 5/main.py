@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 P_Pluto = 248.348
 e_Pluto = 0.25
 theta_i = 0
-theta_f = 2 * math.pi
+theta_f = 2 * 3.14159265
 t_i = 0
 t_f = P_Pluto
 N = 1000

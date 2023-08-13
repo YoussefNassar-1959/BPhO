@@ -7,10 +7,12 @@ e_Pluto=0.25
 theta_i=0
 
 def theta_2_time_constant(P,e):
-    theta_constant=(P*(1-e**2)**1.5)/(2*math.pi)
+    time_constant=(P*(1-e**2)**1.5)/(2*math.pi)
+    return time_constant
 
 def theta_2_time_integrand(e,theta):
-    thtea_integrand=(1-e*math.cos(theta))**(-2)
+    time_integrand=(1-e*math.cos(theta))**(-2)
+    return time_integrand
 
 def simpson(integrand,a,b,n):
     # calculating step size

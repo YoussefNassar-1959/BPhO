@@ -4,8 +4,13 @@ Yr=365*24*60*60
 P_Pluto_Yr=248.348
 P_Pluto_Sec=248.348*Yr
 e_Pluto=0.25
-pi=3.14159265
 theta_i=0
+
+def theta_2_time_constant(P,e):
+    theta_constant=(P*(1-e**2)**1.5)/(2*math.pi)
+
+def theta_2_time_integrand(e,theta):
+    thtea_integrand=(1-e*math.cos(theta))**(-2)
 
 def simpson(integrand,a,b,n):
     # calculating step size

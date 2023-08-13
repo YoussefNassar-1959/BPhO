@@ -15,6 +15,10 @@ def theta_2_time_integrand(e,theta):
     time_integrand=(1-e*math.cos(theta))**(-2)
     return time_integrand
 
+# def time_2_theta(constant,P,e,t):
+#    theta=-constant(P,e)/(4*y)+0.5
+#    return theta
+
 def simpson(integrand,a,b,n):
     # calculating step size
     h = (b - a) / n

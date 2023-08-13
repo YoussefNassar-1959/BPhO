@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 t = np.linspace(0.1, 800, 10000)
 P = 248.348
 theta0 = 0
-ecc_P = 0.25
+ecc_pluto = 0.25
 ecc_0 = 0
 dtheta = 1 / 1000
 
@@ -38,7 +38,7 @@ def calculate_theta_circular(t, P, theta0, ecc):
     theta_interp = interp1d(tt, theta, kind='cubic')
     return theta_interp
     
-theta1 = calculate_theta_eccentric(t, P, theta0, ecc_P)
+theta1 = calculate_theta_eccentric(t, P, theta0, ecc_pluto)
 theta2 = calculate_theta_circular(t, P, theta0, ecc_0)
 eccentric_theta = theta1(t)
 circular_theta= theta2(t)

@@ -3,13 +3,13 @@ from scipy.interpolate import interp1d
 import matplotlib.pyplot as plt
 
 
-t = np.linspace(0.1, 800, 10000)  # Replace with your actual time values
+t = np.linspace(0.1, 800, 10000)
 P = 248.348
 theta0 = 0
 ecc = 0.25
 dtheta = 1 / 1000
 
-def calculate_theta_interp(t, P, theta0, ecc):
+def calculate_theta_eccentric(t, P, theta0, ecc):
     N = np.ceil(t[-1] / P)
     theta = np.arange(theta0, (2 * np.pi * N + theta0) + dtheta, dtheta)
     f = (1 - ecc * np.cos(theta)) ** (-2)
@@ -22,16 +22,18 @@ def calculate_theta_interp(t, P, theta0, ecc):
     
     theta_interp = interp1d(tt, theta, kind='cubic')
     return theta_interp
+    
+def calculate_theta_circular(t,P,theta0):
+    return t/P+theta0
+    
+theta1 = calculate_theta_eccentric(t, P, theta0, ecc)
+theta2 = calculate_theta_circular(t, P, theta0)
+eccentric_theta = theta1(t)
+circular_theta= theta2
 
-# Calculate theta_interp using the function
-theta_interp = calculate_theta_interp(t, P, theta0, ecc)
-
-# Interpolate theta values at specific times 't'
-interpolated_theta = theta_interp(t)
-
-# Create a plot
 plt.figure(figsize=(10, 6))
-plt.plot(t, interpolated_theta, label='Pluto')
+plt.plot(t, eccentric_theta, label='Eccentric')
+plt.plot(t, circular_theta, label='Circular')
 plt.xlabel('Year')
 plt.ylabel('Rad')
 plt.title('Angle vs. Time')

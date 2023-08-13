@@ -2,6 +2,7 @@ Yr=365*24*60*60
 P_Pluto_Yr=248.348
 P_Pluto_Sec=248.348*Yr
 e_Pluto=0.25
+pi=3.14159265
 theta_i=0
 
 def simpson(integrand,a,b,n):

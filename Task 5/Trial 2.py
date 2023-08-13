@@ -2,7 +2,8 @@ import numpy as np
 from scipy.interpolate import interp1d
 import matplotlib.pyplot as plt
 
-t = np.linspace(0, 800, 10000) 
+
+t = np.linspace(0, 800, 10000)  # Replace with your actual time values
 P = 248.348
 theta0 = 0
 ecc = 0.25
@@ -19,7 +20,7 @@ def calculate_theta_interp(t, P, theta0, ecc):
     
     tt = P * (1 - ecc ** 2) ** (3 / 2) * (1 / (2 * np.pi)) * dtheta * (1 / 3) * np.cumsum(c * f)
     
-    theta_interp = interp1d(tt, theta, kind='spline')
+    theta_interp = interp1d(tt, theta, kind='cubic')
     return theta_interp
 
 # Calculate theta_interp using the function
@@ -30,10 +31,10 @@ interpolated_theta = theta_interp(t)
 
 # Create a plot
 plt.figure(figsize=(10, 6))
-plt.plot(t, interpolated_theta, label='Interpolated Theta')
-plt.xlabel('Time')
-plt.ylabel('Interpolated Theta')
-plt.title('Interpolated Theta vs. Time')
+plt.plot(t, interpolated_theta, label='Theta')
+plt.xlabel('Year')
+plt.ylabel('Rad')
+plt.title('Angle vs. Time')
 plt.legend()
 plt.grid(True)
 plt.show()

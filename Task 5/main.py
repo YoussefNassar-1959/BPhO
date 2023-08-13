@@ -1,13 +1,16 @@
 import math
+import numpy as np
 
 Yr=365*24*60*60
 P_Pluto_Yr=248.348
 P_Pluto_Sec=248.348*Yr
 e_Pluto=0.25
 theta_i=0
+theta_f=2*math.pi
+Pluto_t_constant=theta_constant(P_Pluto_Yr,e_Pluto)
 #h=1/1000
 
-def theta_2_time_constant(P,e):
+def time_constant(P,e):
     time_constant=(P*(1-e**2)**1.5)/(2*math.pi)
     return time_constant
 

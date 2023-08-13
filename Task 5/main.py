@@ -1,3 +1,5 @@
+import math
+
 Yr=365*24*60*60
 P_Pluto_Yr=248.348
 P_Pluto_Sec=248.348*Yr

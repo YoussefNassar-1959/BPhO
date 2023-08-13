@@ -1,21 +1,21 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
+pi=3.14159265
 P_Pluto = 248.348
 e_Pluto = 0.25
 theta_i = 0
-theta_f = 2 * 3.14159265
+theta_f = 2 * pi
 t_i = 0
 t_f = P_Pluto
 N = 1000
 
 def time_constant(P, e):
-    time_constant = (P * (1 - e ** 2) ** 1.5) / (2 * math.pi)
+    time_constant = (P * (1 - e ** 2) ** 1.5) / (2 * pi)
     return time_constant
 
 def theta_2_time_integrand(e, theta):
-    time_integrand = (1 - e * np.cos()(theta)) ** (-2)
+    time_integrand = (1 - e * np.cos(theta)) ** (-2)
     return time_integrand
 
 def simpson(integrand, a, b, n):

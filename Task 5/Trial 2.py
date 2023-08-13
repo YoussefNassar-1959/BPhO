@@ -1,6 +1,8 @@
 import numpy as np
 from scipy.interpolate import interp1d
-t = np.linspace(0, 800, 10000)  # Replace with your actual time values
+import matplotlib.pyplot as plt
+
+t = np.linspace(0, 800, 10000) 
 P = 248.348
 theta0 = 0
 ecc = 0.25

@@ -5,6 +5,7 @@ P_Pluto_Yr=248.348
 P_Pluto_Sec=248.348*Yr
 e_Pluto=0.25
 theta_i=0
+#h=1/1000
 
 def theta_2_time_constant(P,e):
     time_constant=(P*(1-e**2)**1.5)/(2*math.pi)

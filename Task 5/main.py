@@ -1,5 +1,7 @@
 import math
 import numpy as np
+import matplotlib.pyplot as plt
+
 
 P_Pluto = 248.348
 e_Pluto = 0.25
@@ -43,14 +45,23 @@ Pluto_time_constant = time_constant(P_Pluto, e_Pluto)
 # Define the theta values
 theta_values = np.linspace(theta_i, theta_f, N)
 
-# Define the time values
-time_values = np.linspace(t_i, t_f, N)
-
 # Compute the integrand values using the theta_2_time_integrand function
 integrand_values = theta_2_time_integrand(e_Pluto, theta_values)
 
-# Compute the cumulative sum values using the simpson function with integrand_values
-cumulative_sum_values = simpson(integrand_values, theta_i, theta_f, N)
+# Find the time values
+time_values = integrand_values * Pluto_time_constant
 
-# Optional: If you want to convert the cumulative_sum_values to time units using the Pluto_time_constant
-cumulative_sum_time_values = cumulative_sum_values * Pluto_time_constant
+# Create a plot
+plt.figure(figsize=(10, 6))
+
+# Plot time_values on the x-axis and theta_values on the y-axis
+plt.plot(time_values, theta_values, label='Angles')
+
+# Add labels and a legend
+plt.xlabel('Time')
+plt.ylabel('Orbit Polar Angle')
+plt.title('Angles vs. Time')
+plt.legend()
+
+# Show the plot
+plt.show()

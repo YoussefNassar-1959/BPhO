@@ -3,7 +3,7 @@ from scipy.interpolate import interp1d
 import matplotlib.pyplot as plt
 
 
-t = np.linspace(0, 800, 10000)  # Replace with your actual time values
+t = np.linspace(0.1, 800, 10000)  # Replace with your actual time values
 P = 248.348
 theta0 = 0
 ecc = 0.25
@@ -31,7 +31,7 @@ interpolated_theta = theta_interp(t)
 
 # Create a plot
 plt.figure(figsize=(10, 6))
-plt.plot(t, interpolated_theta, label='Theta')
+plt.plot(t, interpolated_theta, label='Pluto')
 plt.xlabel('Year')
 plt.ylabel('Rad')
 plt.title('Angle vs. Time')

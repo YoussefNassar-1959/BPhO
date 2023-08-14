@@ -5,10 +5,10 @@ Earth_Mas_Unit=3.00273e-6
 
 earth_a = 1
 earth_e = 0.02
-earth_m = 1
+earth_m = 1*Earth_Mas_Unit
 venus_a = 0.723
 venus_e = 0.01 
-venus_m = 0.815
+venus_m = 0.815*Earth_Mas_Unit
 
 earth_P = (earth_a**3 / (1+earth_m))**(0.5)
 venus_P = (venus_a**3 / (1+venus_m))**(0.5)
@@ -18,7 +18,6 @@ days_per_year = 365
 time_step = 3  # days
 total_steps = int(years * days_per_year / time_step)
 
-# Arrays to store positions
 earth_x_positions = np.zeros(total_steps)
 earth_y_positions = np.zeros(total_steps)
 venus_x_positions = np.zeros(total_steps)

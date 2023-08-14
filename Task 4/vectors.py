@@ -74,3 +74,9 @@ class Vector:
             self.y / magnitude,
             self.z / magnitude,
         )
+
+# Testing Vector Class - TO BE DELETED
+test = Vector(3, 6, 9)
+print(test.get_magnitude())
+print(test.normalize())
+print(test.normalize().get_magnitude())

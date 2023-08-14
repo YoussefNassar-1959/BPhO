@@ -3,17 +3,15 @@ import matplotlib.pyplot as plt
 
 earth_a = 1
 earth_e = 0.02
-earth_m = 1
 venus_a = 0.723
 venus_e = 0.01
-venus_m = 0.815
 
-earth_P = (earth_a ** 3 / (1 + earth_m)) ** 0.5
-venus_P = (venus_a ** 3 / (1 + venus_m)) ** 0.5
+earth_P = (earth_a ** 3) ** 0.5
+venus_P = (venus_a ** 3) ** 0.5
 
-years = 10
+years = 10*earth_P
 days_per_year = 365
-time_step = 3  # days
+time_step = years*365/1234
 total_steps = int(years * days_per_year / time_step)
 
 earth_x_positions = np.zeros(total_steps)

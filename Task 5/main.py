@@ -44,7 +44,7 @@ eccentric_theta = theta1(t)
 circular_theta= theta2(t)
 
 plt.figure(figsize=(10, 6))
-plt.plot(t, eccentric_theta, label='Eccentric')
+plt.plot(t, eccentric_theta, label='Elliptical')
 plt.plot(t, circular_theta, label='Circular')
 plt.xlabel('Year')
 plt.ylabel('Rad')

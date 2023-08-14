@@ -59,4 +59,7 @@ plt.ylabel("y position (AU)")
 plt.title("Earth-Venus Spirograph")
 plt.legend()
 plt.grid(True)
+plt.xlim(-1, 1)  # Limit x axis to -1 to 1 AU
+plt.ylim(-1, 1)  # Limit y axis to -1 to 1 AU
+plt.axis('equal')  # Set the x-y ratio to 1:1
 plt.show()
